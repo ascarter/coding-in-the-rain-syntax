@@ -1,0 +1,11 @@
+{
+  "name": "coding-in-the-rain-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "A lighter relaxed theme appropriate for code, coffee, and rain on the windows.",
+  "repository": "https://github.com/ascarter/coding-in-the-rain-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
