@@ -66,13 +66,13 @@
 }
 
 .comment {
-  color: @light-gray;
+  color: @commentColor;
+  font-style: italic;
 }
 
 .entity {
   &.name.type {
-    color: @light-orange;
-    text-decoration: underline;
+    color: @typeColor;
   }
 
   &.other.inherited-class {
@@ -81,7 +81,8 @@
 }
 
 .keyword {
-  color: @purple;
+  color: @keywordColor;
+  font-weight: bold;
 
   &.control {
     color: @purple;
@@ -92,27 +93,31 @@
   }
 
   &.other.special-method {
-    color: @blue;
+    color: @keywordSpecialMethod;
   }
 
   &.other.unit {
-    color: @orange;
+    color: @keywordUnitColor;
   }
 }
 
 .storage {
-  color: @purple;
+  color: @keywordColor;
+
+  &.type {
+    color: @keywordColor;
+  }
 }
 
 .constant {
-  color: @orange;
+  color: @constantColor;
 
   &.character.escape {
     color: @cyan;
   }
 
   &.numeric {
-    color: @orange;
+    color: @constantNumericColor;
   }
 
   &.other.color {
@@ -120,15 +125,15 @@
   }
 
   &.other.symbol {
-    color: @green;
+    color: @constantSymbolColor;
   }
 }
 
 .variable {
-  color: @red;
+  color: @variableColor;
 
   &.interpolation {
-    color: darken(@red, 10%);
+    color: darken(@variableColor, 10%);
   }
 
   &.parameter.function {
@@ -137,24 +142,29 @@
 }
 
 .invalid.illegal {
-  background-color: @red;
-  color: @syntax-background-color;
+  background-color: @invalidTextBackgroundColor;
+  color: @invalidTextColor;
+
+  &.deprecated {
+      color: @invalidTextColor;
+      background-color: @deprecatedTextBackgroundColor;
+  }
 }
 
 .string {
-  color: @green;
+  color: @stringColor;
 
 
   &.regexp {
     color: @cyan;
 
     .source.ruby.embedded {
-      color: @orange;
+      color: @stringInterpretedColor;
     }
   }
 
   &.other.link {
-    color: @red;
+    color: @markdownLinkColor;
   }
 }
 
@@ -188,48 +198,48 @@
   }
 
   &.section.embedded {
-    color: darken(@red, 10%);
+    color: @stringInterpretedColor;
   }
 
 }
 
 .support {
   &.class {
-    color: @light-orange;
+    color: @variableColor;
   }
 
   &.function  {
-    color: @cyan;
+    color: @typeColor;
 
     &.any-method {
-      color: @blue;
+      color: @typeColor;
     }
   }
 }
 
 .entity {
   &.name.function {
-    color: @blue;
+    color: @parameterColor;
   }
 
   &.name.class, &.name.type.class {
-    color: @light-orange;
+    color: @parameterColor;
   }
 
   &.name.section {
-    color: @blue;
+    color: @parameterColor;
   }
 
   &.name.tag {
-    color: @red;
-    text-decoration: underline;
+    color: @variableColor;
   }
 
   &.other.attribute-name {
-    color: @orange;
+    color: @typeColor;
 
     &.id {
-      color: @blue;
+      color: @typeColor;
+      font-weight: bold;
     }
   }
 }
@@ -240,7 +250,7 @@
   }
 
   &.link {
-    color: @orange;
+    color: @markdownLinkColor;
   }
 
   &.require {
@@ -263,7 +273,6 @@
 
 .markup {
   &.bold {
-    color: @orange;
     font-style: bold;
   }
 
@@ -276,12 +285,11 @@
   }
 
   &.italic {
-    color: @purple;
     font-style: italic;
   }
 
   &.heading .punctuation.definition.heading {
-    color: @blue;
+    color: @markdownHeaderColor;
   }
 
   &.inserted {
@@ -293,7 +301,7 @@
   }
 
   &.quote {
-    color: @orange;
+    color: @stringColor;
   }
 
   &.raw.inline {
